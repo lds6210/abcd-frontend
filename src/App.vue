@@ -1,9 +1,13 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <div class="menu">
-    <a v-for = "i in menu2" :key="i"> {{i}} </a>
+  <div class="header">
+    <button @click="cnt++"> add list </button>
   </div>
-  
+  <div>
+    <span> 신고 수 : {{cnt}} </span>
+  </div>
+
+
 </template>
   
   
@@ -11,8 +15,9 @@
 export default {
   name: 'App',
   data(){
-  return {
-    menu2: ['home','want to list', 'want the list','mypage'],
+    return {
+    cnt: 0,
+    menu2: ['home','wish list', 'mypage'],
     }
   },
   components: {
@@ -22,6 +27,8 @@ export default {
 </script>
 
 <style>
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -30,7 +37,7 @@ export default {
   color: #2c3e50;
 }
 
-.menu {
+.header {
   display: flex;
   flex-direction: row;
   background: darkslateblue;
@@ -40,7 +47,7 @@ export default {
   margin-top: 5px;
 }
 
-.menu a {
+.header a {
   color: #f8fbfb;
   font-size: 20px;
   font-weight: 600;
